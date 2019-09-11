@@ -1,13 +1,62 @@
 import React from 'react';
-import '../styles/App.css';
+import styled, { keyframes } from 'styled-components';
+import logo from '../logo.svg';
 
-const App: React.FC = () => {
+const Wrapper = styled.div`
+  text-align: center;
+`;
+
+const Header = styled.header`
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+`;
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+`;
+
+const HeaderImage = styled.img`
+ animation:${rotate360} infinite 20s linear;
+ height: 40vmin;
+`;
+
+const Bio = styled.p`
+ 
+`;
+
+const HeaderLink = styled.a`
+ color: #61dafb;
+`;
+
+const App: React.FC = () =>
+{
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Hello world!</h2>
-      </header>
-    </div>
+    <Wrapper>
+      <Header>
+        <HeaderImage src={logo} alt="logo" />
+        <Bio>
+          <h2>Hello world!</h2>
+        </Bio>
+        <HeaderLink
+          href="http://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer" >
+          Learn React
+        </HeaderLink>
+      </Header>
+    </Wrapper>
   );
 }
 
