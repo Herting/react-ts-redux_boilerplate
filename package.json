@@ -2,7 +2,10 @@
   "name": "dashboard",
   "version": "0.1.0",
   "private": true,
-  "author": {"name": "Nikolaj Herting Olsen", "email": "nikolaj.herting.olsen@gmail.com"},
+  "author": {
+    "name": "Nikolaj Herting Olsen",
+    "email": "nikolaj.herting.olsen@gmail.com"
+  },
   "dependencies": {
     "@types/jest": "24.0.18",
     "@types/node": "12.7.4",
