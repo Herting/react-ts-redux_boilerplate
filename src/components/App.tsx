@@ -32,8 +32,8 @@ const HeaderImage = styled.img`
  height: 40vmin;
 `;
 
-const Bio = styled.p`
- 
+const Bio = styled.span`
+
 `;
 
 const HeaderLink = styled.a`
@@ -50,10 +50,10 @@ const App: React.FC = () =>
           <h2>Hello world!</h2>
         </Bio>
         <HeaderLink
-          href="http://reactjs.org"
+          href="https://github.com/Herting"
           target="_blank"
           rel="noopener noreferrer" >
-          Learn React
+          Herting Github
         </HeaderLink>
       </Header>
     </Wrapper>
