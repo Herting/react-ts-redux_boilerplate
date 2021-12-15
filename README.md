@@ -1,5 +1,3 @@
-This project was bootstrapped with nikolaj herting olsen's react-ts-redux boilerplate.
-
 ## Available Scripts
 
 In the project directory, you can run:
