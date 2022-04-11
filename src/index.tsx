@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './styles/index.css';
 import App from './components/App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import reducer, { initialState } from './store/reducer';
+import configureStore from './store/configureStore';
+import { AppState } from './store';
 
 // If interested in using the redux devtools
 // https://github.com/zalmoxisus/redux-devtools-extension.
@@ -13,7 +13,9 @@ import reducer, { initialState } from './store/reducer';
 // const composeEnhancers = composeWithDevTools({});
 // const store = createStore(reducer, initialState, composeEnhancers(applyMiddleware(thunk)));
 
-const store = createStore(reducer, initialState);
+let initialState: AppState | undefined = undefined;
+
+const store = configureStore(initialState);
 
 class ConnectedApp extends React.Component
 {
@@ -26,4 +28,9 @@ class ConnectedApp extends React.Component
     }
 };
 
-ReactDOM.render(<ConnectedApp />, document.getElementById('root'));
+const container = document.getElementById('root');
+
+if(container){
+	var root = ReactDOM.createRoot(container);
+	root.render(<ConnectedApp />);
+}
