@@ -5,6 +5,8 @@ export function createExampleApiClient() {
   return new ExampleApiClient(new FetchClient());
 }
 
-const ApiClient = createExampleApiClient();
+const api = {
+  ExampleClient: createExampleApiClient()
+};
 
-export default ApiClient;
+export default api;
